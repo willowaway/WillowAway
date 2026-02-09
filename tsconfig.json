@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true, // No 'any' type
+    "strictNullChecks": true, // Null and undefined are not assignable to other types
+    "strictFunctionTypes": true, // Function parameters are contravariant
+    "noImplicitReturns": true, // Must return a value
+    "noFallthroughCasesInSwitch": true, // Switch statements require breaks
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -23,20 +23,27 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "./app/*",
+		"./app/components/*"
+      ],
+      "@/public/*": [
+        "./public/*"
+      ],
+      "@/scss/*": [
+        "./scss/*"
       ]
-    }
+    },
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

@@ -1,0 +1,24 @@
+@use "../config" as *;
+
+/* =====================================================
+   BASE
+   ===================================================== */
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+}
+
+.green { color: $brand-green; }
+.blue  { color: $brand-blue; }
+
+button:focus,
+.btn:focus {
+  box-shadow: none;
+}

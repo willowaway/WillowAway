@@ -1,0 +1,33 @@
+/* -----------------------------------------------------
+   CONFIGURE BOOTSTRAP FIRST
+----------------------------------------------------- */
+// 1. Functions (Required for everything else)
+@use "bootstrap/scss/functions" as *;
+
+// 2. Variables (With your overrides)
+@use "bootstrap/scss/variables" as * with (
+  $theme-colors: (
+    "primary": #1fbd28,
+    "info": #2eb5cd
+  ),
+  $btn-focus-box-shadow: none,
+  $border-radius-pill: 50rem
+);
+
+// 3. Mixins & Maps (Must come AFTER variables)
+@use "bootstrap/scss/maps" as *;
+@use "bootstrap/scss/mixins" as *;
+@use "bootstrap/scss/utilities" as *;
+
+// 4. The actual CSS classes
+@use "bootstrap/scss/root" as *;
+@use "bootstrap/scss/bootstrap" as *;
+
+/* -----------------------------------------------------
+   APP STYLES
+----------------------------------------------------- */
+
+// @use "config";
+// @use "base";
+// @use "components";
+// @use "sections";
