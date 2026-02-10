@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
 					<Toast
 						show={showToast}
 						onClose={toggleToast}
-						delay={500}
+						delay={3000}
 						autohide
 						data-bs-theme="dark"
 						className={`text-white ${toastVariant}`}
