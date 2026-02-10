@@ -1,7 +1,0 @@
-@use "../config" as *;
-
-.section {
-  @include section-padding;
-  background: var(--section-bg);
-  color: var(--bs-body-color);
-}

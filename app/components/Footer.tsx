@@ -7,66 +7,58 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Footer: FC = () => {
-  const year = new Date().getFullYear();
+	const year = new Date().getFullYear();
 
-  return (
-    <motion.footer
-      initial={{ opacity: 0, y: 30 }}
-      exit={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: false, margin: "-50px" }}
-    >
-      <Container fluid className="footer">
-        <Row>
-          <Col md="4" className="footer-copywright">
-            <h3>Designed and Developed by Willow Hughes</h3>
-          </Col>
+	return (
+		<Container fluid className="footer">
+			<Row>
+				<Col md="4" className="footer-copywright">
+					<h3>Designed and Developed by Willow Hughes</h3>
+				</Col>
 
-          <Col md="4" className="footer-copywright">
-            <h3>Copyright © {year}</h3>
-          </Col>
+				<Col md="4" className="footer-copywright">
+					<h3>Copyright © {year}</h3>
+				</Col>
 
-          <Col md="4" className="footer-body">
-            <ul className="footer-icons">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/willowaway"
-                  style={{ color: "white" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
+				<Col md="4" className="footer-body">
+					<ul className="footer-icons">
+						<li className="social-icons">
+							<a
+								href="https://github.com/willowaway"
+								style={{ color: "white" }}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<AiFillGithub />
+							</a>
+						</li>
 
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/willowaway/"
-                  style={{ color: "white" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
+						<li className="social-icons">
+							<a
+								href="https://www.linkedin.com/in/willowaway/"
+								style={{ color: "white" }}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaLinkedinIn />
+							</a>
+						</li>
 
-              <li className="social-icons">
-                <a
-                  href="https://www.instagram.com/willow_away/"
-                  style={{ color: "white" }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <AiFillInstagram />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    </motion.footer>
-  );
+						<li className="social-icons">
+							<a
+								href="https://www.instagram.com/willow_away/"
+								style={{ color: "white" }}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<AiFillInstagram />
+							</a>
+						</li>
+					</ul>
+				</Col>
+			</Row>
+		</Container>
+	);
 };
 
 export default Footer;

@@ -31,11 +31,8 @@
       ],
       "@/public/*": [
         "./public/*"
-      ],
-      "@/scss/*": [
-        "./scss/*"
       ]
-    },
+    }
   },
   "include": [
     "next-env.d.ts",
