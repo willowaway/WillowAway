@@ -4,9 +4,6 @@ on: [deployment_status]
 # Set the necessary credentials and export variables we can use to instrument our test run. Use the ENVIRONMENT_URL
 # to run your checks against staging, preview or production.
 env:
-    CHECKLY_API_KEY: ${{ secrets.CHECKLY_API_KEY }}
-    CHECKLY_ACCOUNT_ID: ${{ secrets.CHECKLY_ACCOUNT_ID }}
-    ENVIRONMENT_URL: ${{ github.event.deployment_status.environment_url }}
     CHECKLY_TEST_ENVIRONMENT: ${{ github.event.deployment_status.environment }}
 jobs:
     test-e2e:
@@ -47,3 +44,6 @@ jobs:
               id: deploy-checks
               if: steps.run-checks.outcome == 'success' && github.event.deployment_status.environment == 'Production'
               run: npx checkly deploy --force
+              env:
+                  CHECKLY_API_KEY: ${{ secrets.CHECKLY_API_KEY }}
+                  CHECKLY_ACCOUNT_ID: ${{ secrets.CHECKLY_ACCOUNT_ID }}
