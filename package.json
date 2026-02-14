@@ -23,16 +23,20 @@
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "checkly": "latest",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "eslint-plugin-react": "^7.37.5",
     "prettier": "^3.8.1",
     "prettier-plugin-organize-imports": "^4.3.0",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "typescript": "^5",
+    "jiti": "^2"
   }
 }
