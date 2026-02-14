@@ -35,7 +35,11 @@ jobs:
               run: npm ci
             - name: Run checks # run the checks passing in the ENVIRONMENT_URL and recording a test session.
               id: run-checks
-              run: npx checkly test -e CHECKLY_API_KEY=${{ env.CHECKLY_API_KEY }} -e CHECKLY_ACCOUNT_ID=${{ env.CHECKLY_ACCOUNT_ID }} -e ENVIRONMENT_URL=${{ env.ENVIRONMENT_URL }} --reporter=github --record
+              run: npx checkly test --reporter=github --record
+              env:
+                  ENVIRONMENT_URL: ${{ github.event.deployment_status.environment_url }}
+                  CHECKLY_API_KEY: ${{ secrets.CHECKLY_API_KEY }}
+                  CHECKLY_ACCOUNT_ID: ${{ secrets.CHECKLY_ACCOUNT_ID }}
             - name: Create summary # export the markdown report to the job summary.
               id: create-summary
               run: cat checkly-github-report.md > $GITHUB_STEP_SUMMARY
