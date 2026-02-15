@@ -35,7 +35,7 @@ const NavBar: React.FC = () => {
 			className={navColour ? "sticky" : "navbar"}
 		>
 			<Container>
-				<Navbar.Brand as={Link} href="/" className="d-flex">
+				<Navbar.Brand as={Link} href="/" className="d-flex" data-testid="home-logo">
 					<Image
 						src="/logo.png"
 						width="417"
